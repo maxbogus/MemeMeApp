@@ -15,9 +15,14 @@ UINavigationControllerDelegate {
     @IBOutlet weak var albumButton: UIBarButtonItem!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     
+    @IBOutlet weak var topTextField: UITextField!
+    @IBOutlet weak var bottomTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        topTextField.text = "TOP"
+        bottomTextField.text = "BOTTOM"
         // Do any additional setup after loading the view, typically from a nib.
     }
 
