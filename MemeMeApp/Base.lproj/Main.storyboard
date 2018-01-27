@@ -76,6 +76,7 @@
                         <outlet property="bottomTextField" destination="b4o-9N-FTq" id="AVK-wy-ReX"/>
                         <outlet property="cameraButton" destination="WJD-sr-seW" id="vUD-1V-RHO"/>
                         <outlet property="imagePickerView" destination="pyL-1d-XAs" id="DaH-e3-6Tc"/>
+                        <outlet property="toolBar" destination="Zz7-sR-xgf" id="nCl-4l-gtH"/>
                         <outlet property="topTextField" destination="BlL-Ql-pFZ" id="GWf-c4-mwA"/>
                     </connections>
                 </viewController>
