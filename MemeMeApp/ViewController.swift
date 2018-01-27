@@ -18,11 +18,19 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     
+    let memeTextAttributes:[String:Any] = [
+        "NSStrokeColorAttributeName": UIColor.white,
+        "NSForegroundColorAttributeName": UIColor.black,
+        "NSFontAttributeName": UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+        "NSStrokeWidthAttributeName": 3.0]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         topTextField.text = "TOP"
         bottomTextField.text = "BOTTOM"
+        topTextField.defaultTextAttributes = memeTextAttributes
+        bottomTextField.defaultTextAttributes = memeTextAttributes
         self.topTextField.delegate = self
         self.bottomTextField.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
