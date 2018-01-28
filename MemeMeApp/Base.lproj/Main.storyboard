@@ -53,6 +53,9 @@
                                 <rect key="frame" x="19" y="20" width="54" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Share"/>
+                                <connections>
+                                    <action selector="shareMeme:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fmj-Ui-5IM"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BlL-Ql-pFZ">
                                 <rect key="frame" x="16" y="58" width="343" height="30"/>
@@ -81,7 +84,7 @@
                         <outlet property="bottomTextField" destination="b4o-9N-FTq" id="AVK-wy-ReX"/>
                         <outlet property="cameraButton" destination="WJD-sr-seW" id="vUD-1V-RHO"/>
                         <outlet property="imagePickerView" destination="pyL-1d-XAs" id="DaH-e3-6Tc"/>
-                        <outlet property="shareButton" destination="jGh-Kk-eXb" id="m0f-V5-dpW"/>
+                        <outlet property="shareButton" destination="jGh-Kk-eXb" id="Rke-g4-Ytd"/>
                         <outlet property="toolBar" destination="Zz7-sR-xgf" id="nCl-4l-gtH"/>
                         <outlet property="topTextField" destination="BlL-Ql-pFZ" id="GWf-c4-mwA"/>
                     </connections>

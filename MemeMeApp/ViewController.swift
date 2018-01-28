@@ -19,9 +19,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var shareButton: UIButton!
-    
     @IBOutlet weak var imagePickerView: UIImageView!
-    
+
     @IBOutlet weak var albumButton: UIBarButtonItem!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var toolBar: UIToolbar!
@@ -29,8 +28,10 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     
+    var memedImage: UIImage!
+    
     func save() {
-        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imagePickerView.image!, memedImage: generateMemedImage())
+        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imagePickerView.image!, memedImage: self.memedImage)
     }
     
     func generateMemedImage() -> UIImage {
@@ -48,6 +49,31 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         toolBar.isHidden = false
         
         return memedImage
+    }
+    
+    @IBAction func shareMeme(_ sender: Any) {
+        let memedImage = generateMemedImage()
+        self.memedImage = memedImage
+        
+        // set up activity view controller
+        let imageToShare = [ memedImage ]
+        let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+        
+        // exclude some activity types from the list (optional)
+        activityViewController.excludedActivityTypes = [ UIActivityType.airDrop, UIActivityType.postToFacebook ]
+        
+        // present the view controller
+        self.present(activityViewController, animated: true, completion: nil)
+        
+        activityViewController.completionWithItemsHandler = {(activityType: UIActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) in
+            if !completed {
+                // User canceled
+                return
+            }
+            self.save()
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     let memeTextAttributes:[String:Any] = [
