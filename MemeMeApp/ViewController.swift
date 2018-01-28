@@ -18,6 +18,8 @@ struct Meme {
 class ViewController: UIViewController, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate, UITextFieldDelegate {
 
+    @IBOutlet weak var shareButton: UIButton!
+    
     @IBOutlet weak var imagePickerView: UIImageView!
     
     @IBOutlet weak var albumButton: UIBarButtonItem!
@@ -56,6 +58,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        shareButton.isEnabled = false
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         topTextField.text = "TOP"
         bottomTextField.text = "BOTTOM"
@@ -70,6 +73,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary
+        shareButton.isEnabled = true
         present(imagePicker, animated: true, completion: nil)
     }
     
@@ -78,6 +82,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = .camera
+        shareButton.isEnabled = true
         present(imagePicker, animated: true, completion: nil)
     }
     
