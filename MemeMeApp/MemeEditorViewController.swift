@@ -69,7 +69,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
                 self.save()
             }
             
-            self.dismiss(animated: rue, completion: nil)
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
@@ -103,18 +103,17 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     }
 
     @IBAction func pickAnImage(_ sender: Any) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
-        shareButton.isEnabled = true
-        present(imagePicker, animated: true, completion: nil)
+        presentImagePickerWith(sourceType: .photoLibrary)
     }
     
     @IBAction func pickAnImageFromCamera(_ sender: Any) {
-        
+        presentImagePickerWith(sourceType: .camera)
+    }
+    
+    func presentImagePickerWith(sourceType: UIImagePickerControllerSourceType) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        imagePicker.sourceType = .camera
+        imagePicker.sourceType = sourceType
         shareButton.isEnabled = true
         present(imagePicker, animated: true, completion: nil)
     }
@@ -141,15 +140,15 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     }
     
     @objc func keyboardWillShow(_ notification:Notification) {
-        print(view.frame.origin.y)
-        view.frame.origin.y -= getKeyboardHeight(notification)
-        print(view.frame.origin.y)
+        if bottomTextField.isFirstResponder {
+            view.frame.origin.y -= self.getKeyboardHeight(notification)
+        }
     }
     
     @objc func keyboardWillHide(_ notification:Notification) {
-        print(view.frame.origin.y)
-        view.frame.origin.y = 0
-        print(view.frame.origin.y)
+        if bottomTextField.isFirstResponder {
+            view.frame.origin.y = 0
+        }
     }
     
     func getKeyboardHeight(_ notification:Notification) -> CGFloat {
