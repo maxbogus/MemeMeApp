@@ -23,8 +23,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pyL-1d-XAs">
-                                <rect key="frame" x="67" y="269" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pyL-1d-XAs">
+                                <rect key="frame" x="0.0" y="58" width="375" height="565"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zz7-sR-xgf" userLabel="Bottom Toolbar">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
@@ -43,7 +43,7 @@
                             </toolbar>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="BlL-Ql-pFZ">
                                 <rect key="frame" x="16" y="68" width="343" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="30"/>
@@ -51,15 +51,14 @@
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="b4o-9N-FTq">
                                 <rect key="frame" x="16" y="518" width="343" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="30"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wi4-Ps-gv0" userLabel="Top Toolbar">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wi4-Ps-gv0" userLabel="Top Toolbar">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="Share" id="6OC-D1-Puv">
                                         <connections>
@@ -71,12 +70,14 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Zz7-sR-xgf" firstAttribute="top" secondItem="pyL-1d-XAs" secondAttribute="bottom" constant="226" id="8uW-AX-fTD"/>
-                            <constraint firstItem="pyL-1d-XAs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="8xg-Zi-xM1"/>
-                            <constraint firstItem="pyL-1d-XAs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="249" id="cUR-Gl-qO5"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pyL-1d-XAs" secondAttribute="trailing" constant="68" id="cun-R7-lfl"/>
+                            <constraint firstItem="wi4-Ps-gv0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6vU-IQ-tEE"/>
+                            <constraint firstItem="Zz7-sR-xgf" firstAttribute="top" secondItem="pyL-1d-XAs" secondAttribute="bottom" id="8uW-AX-fTD"/>
+                            <constraint firstItem="pyL-1d-XAs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8xg-Zi-xM1"/>
+                            <constraint firstItem="wi4-Ps-gv0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9Ot-9I-Csg"/>
+                            <constraint firstItem="wi4-Ps-gv0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-20" id="Zqx-Lr-51y"/>
+                            <constraint firstItem="pyL-1d-XAs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="38" id="cUR-Gl-qO5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pyL-1d-XAs" secondAttribute="trailing" id="cun-R7-lfl"/>
                             <constraint firstItem="Zz7-sR-xgf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gXM-pc-xXh"/>
-                            <constraint firstItem="Zz7-sR-xgf" firstAttribute="top" secondItem="pyL-1d-XAs" secondAttribute="bottom" constant="226" id="meD-rv-jeD"/>
                             <constraint firstItem="Zz7-sR-xgf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tzb-7B-MVX"/>
                             <constraint firstItem="Zz7-sR-xgf" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="xIf-jp-Ict"/>
                         </constraints>
