@@ -74,10 +74,10 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     }
     
     let memeTextAttributes:[String:Any] = [
-        "NSStrokeColorAttributeName": UIColor.white,
-        "NSForegroundColorAttributeName": UIColor.black,
-        "NSFontAttributeName": UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        "NSStrokeWidthAttributeName": 3.0]
+        NSAttributedStringKey.foregroundColor.rawValue : UIColor.white,
+        NSAttributedStringKey.font.rawValue : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+        NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
+        NSAttributedStringKey.strokeWidth.rawValue : -3.0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
