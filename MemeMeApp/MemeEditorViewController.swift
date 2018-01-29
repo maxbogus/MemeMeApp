@@ -52,11 +52,9 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     }
     
     @IBAction func shareMeme(_ sender: Any) {
-        let memedImage = generateMemedImage()
-        self.memedImage = memedImage
-        
+        self.memedImage = generateMemedImage()
         // set up activity view controller
-        let imageToShare = [ memedImage ]
+        let imageToShare: [UIImage] = [ memedImage ]
         let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
         
@@ -67,12 +65,11 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         self.present(activityViewController, animated: true, completion: nil)
         
         activityViewController.completionWithItemsHandler = {(activityType: UIActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) in
-            if !completed {
-                // User canceled
-                return
+            if completed {
+                self.save()
             }
-            self.save()
-            self.dismiss(animated: true, completion: nil)
+            
+            self.dismiss(animated: rue, completion: nil)
         }
     }
     
@@ -93,6 +90,16 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         self.topTextField.delegate = self
         self.bottomTextField.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        subscribeToKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        unsubscribeFromKeyboardNotifications()
     }
 
     @IBAction func pickAnImage(_ sender: Any) {
@@ -123,11 +130,6 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         dismiss(animated: true, completion: nil)
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        // check ui switch. if nil disable field.
-        return true
-    }
-    
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         textField.text = ""
         return true
@@ -136,18 +138,6 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return false
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
-        super.viewWillAppear(animated)
-        subscribeToKeyboardNotifications()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        
-        super.viewWillDisappear(animated)
-        unsubscribeFromKeyboardNotifications()
     }
     
     @objc func keyboardWillShow(_ notification:Notification) {
