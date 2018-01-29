@@ -83,13 +83,14 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         super.viewDidLoad()
         shareButton.isEnabled = false
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-        topTextField.text = "TOP"
-        bottomTextField.text = "BOTTOM"
-        topTextField.defaultTextAttributes = memeTextAttributes
-        bottomTextField.defaultTextAttributes = memeTextAttributes
-        self.topTextField.delegate = self
-        self.bottomTextField.delegate = self
-        // Do any additional setup after loading the view, typically from a nib.
+        configure(textField: bottomTextField, withText: "BOTTOM")
+        configure(textField: topTextField, withText: "TOP")
+    }
+    
+    func configure(textField: UITextField, withText text: String) {
+        textField.text = text
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
