@@ -17,13 +17,14 @@ struct Meme {
 
 class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate, UITextFieldDelegate {
-
-    @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var imagePickerView: UIImageView!
 
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var albumButton: UIBarButtonItem!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
+    
     @IBOutlet weak var toolBar: UIToolbar!
+    @IBOutlet weak var shareToolBar: UIToolbar!
     
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
@@ -37,7 +38,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     func generateMemedImage() -> UIImage {
         
         // Hide toolbar and navbar
-        toolBar.isHidden = true
+        configureToolBars(option: true)
         
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -46,9 +47,14 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         UIGraphicsEndImageContext()
         
         // TODO: Show toolbar and navbar
-        toolBar.isHidden = false
+        configureToolBars(option: false)
         
         return memedImage
+    }
+    
+    func configureToolBars (option: Bool) {
+        toolBar.isHidden = option
+        shareToolBar.isHidden = option
     }
     
     @IBAction func shareMeme(_ sender: Any) {
