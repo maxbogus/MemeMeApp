@@ -15,7 +15,7 @@ struct Meme {
     var memedImage: UIImage
 }
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate,
+class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var shareButton: UIButton!
