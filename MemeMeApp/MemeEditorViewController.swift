@@ -85,19 +85,19 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
         NSAttributedStringKey.strokeWidth.rawValue : -3.0]
     
+    func configure(textField: UITextField, withText text: String) {
+        textField.text = text
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.textAlignment = .center
+        textField.delegate = self
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         shareButton.isEnabled = false
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         configure(textField: bottomTextField, withText: "BOTTOM")
         configure(textField: topTextField, withText: "TOP")
-    }
-    
-    func configure(textField: UITextField, withText text: String) {
-        textField.text = text
-        textField.defaultTextAttributes = memeTextAttributes
-        textField.textAlignment = .center
-        textField.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -160,10 +160,9 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     }
     
     func getKeyboardHeight(_ notification:Notification) -> CGFloat {
-    
-    let userInfo = notification.userInfo
-    let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
-    return keyboardSize.cgRectValue.height
+        let userInfo = notification.userInfo
+        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
+        return keyboardSize.cgRectValue.height
     }
     
     @objc func subscribeToKeyboardNotifications() {
@@ -172,7 +171,6 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     }
     
     func unsubscribeFromKeyboardNotifications() {
-        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.removeObserver(self)
     }
 }
