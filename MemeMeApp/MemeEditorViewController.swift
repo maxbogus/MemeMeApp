@@ -96,6 +96,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     func configure(textField: UITextField, withText text: String) {
         textField.text = text
         textField.defaultTextAttributes = memeTextAttributes
+        textField.textAlignment = .center
         textField.delegate = self
     }
     
