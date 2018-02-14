@@ -16,16 +16,26 @@ class SentMemesTableViewController: UITableViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
     }
-//    
-//    func tableView(_:numberOfRowsInSection:) {
-//        
-//    }
-//    
-//    func tableView(_:cellForRowAt:) {
-//        
-//    }
-//    
-//    func tableView(_:didSelectRowAt:) {
-//        
-//    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.memes.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MemeCell")!
+        let meme = self.memes[(indexPath as NSIndexPath).row]
+        
+        // Set the name and image
+        cell.imageView?.image = meme.memedImage
+        
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let detailController = self.storyboard!.instantiateViewController(withIdentifier: "detailViewController") as! detailViewController
+        detailController.meme = self.memes[(indexPath as NSIndexPath).row]
+        self.navigationController!.pushViewController(detailController, animated: true)
+    }
 }
