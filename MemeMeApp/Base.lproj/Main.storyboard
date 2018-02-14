@@ -78,6 +78,30 @@
             </objects>
             <point key="canvasLocation" x="-938.39999999999998" y="-97.601199400299862"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="P9B-Pr-xmV">
+            <objects>
+                <viewController id="thw-AJ-asG" customClass="detailViewController" customModule="MemeMeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eQc-nn-HMC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WW8-PZ-f22">
+                                <rect key="frame" x="67" y="269" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="iKy-xp-4Ol"/>
+                    </view>
+                    <connections>
+                        <outlet property="memeImageView" destination="WW8-PZ-f22" id="mVh-r1-ohW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zEY-O8-mWM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="54" y="-99"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="1J3-ho-g8m">
             <objects>
@@ -222,7 +246,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="37.600000000000001" y="100.29985007496252"/>
+            <point key="canvasLocation" x="55" y="628"/>
         </scene>
     </scenes>
 </document>

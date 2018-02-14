@@ -16,16 +16,16 @@ class SentMemesTableViewController: UITableViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
     }
-    
-    func tableView(_:numberOfRowsInSection:) {
-        
-    }
-    
-    func tableView(_:cellForRowAt:) {
-        
-    }
-    
-    func tableView(_:didSelectRowAt:) {
-        
-    }
+//    
+//    func tableView(_:numberOfRowsInSection:) {
+//        
+//    }
+//    
+//    func tableView(_:cellForRowAt:) {
+//        
+//    }
+//    
+//    func tableView(_:didSelectRowAt:) {
+//        
+//    }
 }
