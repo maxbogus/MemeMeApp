@@ -61,7 +61,6 @@
                                     </subviews>
                                 </view>
                                 <connections>
-                                    <outlet property="image" destination="jtb-gl-CC5" id="yvA-GU-NFZ"/>
                                     <outlet property="memeImageView" destination="jtb-gl-CC5" id="5O6-I6-Wmt"/>
                                 </connections>
                             </collectionViewCell>

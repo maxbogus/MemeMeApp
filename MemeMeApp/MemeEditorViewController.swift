@@ -38,8 +38,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     }
     
     @IBAction func dismissCurrentView(_ sender: Any) {
-//        self.navigationController!.popViewController(animated: true)
-        dismiss(animated: true, completion: nil)
+        self.navigationController!.popViewController(animated: true)
     }
     
     func generateMemedImage() -> UIImage {
