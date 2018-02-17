@@ -22,16 +22,9 @@ class SentMemesTableViewController: UITableViewController {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
-        
-        //        let space:CGFloat = 3.0
-        //        let dimension = (view.frame.size.width - (2 * space)) / 3.0
-        //
-        //        flowLayout.minimumInteritemSpacing = space
-        //        flowLayout.minimumLineSpacing = space
-        //        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.tableView.reloadData()
     }

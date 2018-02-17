@@ -10,6 +10,8 @@ import UIKit
 
 class SentMemesCollectionViewController: UICollectionViewController {
     
+    var memes: [Meme]!
+    
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
     @IBAction func navigateToAddMeme(_ sender: Any) {
@@ -17,19 +19,16 @@ class SentMemesCollectionViewController: UICollectionViewController {
         self.navigationController!.pushViewController(memeEditorController, animated: true)
     }
     
-    var memes: [Meme]!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        self.memes = appDelegate.memes
+        memes = appDelegate.memes
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-
-        self.collectionView?.reloadData()
+        self.collectionView!.reloadData()
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -37,7 +36,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
+        self.collectionView!.reloadData()
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SentMemeCell", for: indexPath) as! SentMemeCollectionCellController
         let meme = memes[(indexPath as NSIndexPath).row]
         
