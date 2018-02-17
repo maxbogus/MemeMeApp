@@ -32,7 +32,7 @@
             </objects>
             <point key="canvasLocation" x="-1735" y="-98"/>
         </scene>
-        <!--Collection-->
+        <!--Sent Memes-->
         <scene sceneID="Ufg-ay-caq">
             <objects>
                 <collectionViewController storyboardIdentifier="SentMemesCollectionViewController" id="KNq-JF-xU3" customClass="SentMemesCollectionViewController" customModule="MemeMeApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -47,7 +47,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="x2Z-Rf-E3H" customClass="SentMemeCollectionViewCellController" customModule="MemeMeApp" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SentMemeCollectionCell" id="x2Z-Rf-E3H" customClass="SentMemeCollectionViewCellController" customModule="MemeMeApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -71,8 +71,14 @@
                             <outlet property="delegate" destination="KNq-JF-xU3" id="mKp-G3-BcC"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Collection" id="HOA-WG-gFQ"/>
-                    <navigationItem key="navigationItem" id="jpn-fm-2fl"/>
+                    <tabBarItem key="tabBarItem" title="" image="collection_30x30" landscapeImage="collection_30x30" id="HOA-WG-gFQ"/>
+                    <navigationItem key="navigationItem" title="Sent Memes" id="tcp-5B-A4t">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="52c-fh-vHh">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="khe-D8-VDo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dp5-uk-6sH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -137,7 +143,7 @@
             </objects>
             <point key="canvasLocation" x="-1735" y="628"/>
         </scene>
-        <!--Table-->
+        <!--Sent Memes-->
         <scene sceneID="fgP-jE-ish">
             <objects>
                 <tableViewController id="JUp-z8-88H" customClass="SentMemesTableViewController" customModule="MemeMeApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -160,8 +166,14 @@
                             <outlet property="delegate" destination="JUp-z8-88H" id="9C8-qh-P2b"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Table" id="1XD-yW-CPw"/>
-                    <navigationItem key="navigationItem" id="F8e-sJ-56o"/>
+                    <tabBarItem key="tabBarItem" title="" image="table_30x30" landscapeImage="table_30x30" id="1XD-yW-CPw"/>
+                    <navigationItem key="navigationItem" title="Sent Memes" id="vys-jJ-XHn">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="wCJ-5h-flS">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="egw-3J-j7y"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9l8-rW-rpp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -176,10 +188,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pyL-1d-XAs">
-                                <rect key="frame" x="0.0" y="58" width="375" height="565"/>
+                                <rect key="frame" x="0.0" y="102" width="375" height="472"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zz7-sR-xgf" userLabel="Bottom Toolbar">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="574" width="375" height="44"/>
                                 <items>
                                     <barButtonItem title="Pick from album" id="auD-aQ-a7F">
                                         <connections>
@@ -246,7 +258,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="55" y="628"/>
+            <point key="canvasLocation" x="-151" y="699"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="collection_30x30" width="30" height="30"/>
+        <image name="table_30x30" width="30" height="30"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="egw-3J-j7y"/>
+    </inferredMetricsTieBreakers>
 </document>
