@@ -14,6 +14,7 @@ class SentMemesTableViewController: UITableViewController {
     
     @IBAction func navigateToAddMeme(_ sender: Any) {
         let memeEditorController = self.storyboard!.instantiateViewController(withIdentifier: "MemeEditorViewController") as! MemeEditorViewController
+        memeEditorController.hidesBottomBarWhenPushed = true
         self.navigationController!.pushViewController(memeEditorController, animated: true)
     }
     

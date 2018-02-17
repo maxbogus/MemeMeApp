@@ -15,11 +15,11 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="TVp-pv-seg">
             <objects>
                 <navigationController id="lb4-yQ-ajh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="9Uc-1a-BZY"/>
+                    <tabBarItem key="tabBarItem" title="" image="collection_30x30" landscapeImage="collection_60x60" id="9Uc-1a-BZY"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Z1Y-jO-HPT">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -70,7 +70,7 @@
                             <outlet property="delegate" destination="KNq-JF-xU3" id="mKp-G3-BcC"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="" image="collection_30x30" landscapeImage="collection_30x30" id="HOA-WG-gFQ"/>
+                    <tabBarItem key="tabBarItem" title="" image="collection_30x30" landscapeImage="collection_60x60" id="HOA-WG-gFQ"/>
                     <navigationItem key="navigationItem" title="Sent Memes" id="tcp-5B-A4t">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="52c-fh-vHh">
                             <connections>
@@ -130,11 +130,11 @@
             </objects>
             <point key="canvasLocation" x="-2612" y="251"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="x6z-Kq-xff">
             <objects>
                 <navigationController id="4Im-1O-36K" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="UsP-bh-auH"/>
+                    <tabBarItem key="tabBarItem" title="" image="table_30x30" landscapeImage="table_60x60" id="UsP-bh-auH"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xTS-BN-6OC">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -150,7 +150,7 @@
         <!--Sent Memes-->
         <scene sceneID="fgP-jE-ish">
             <objects>
-                <tableViewController id="JUp-z8-88H" customClass="SentMemesTableViewController" customModule="MemeMeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="NO" id="JUp-z8-88H" customClass="SentMemesTableViewController" customModule="MemeMeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Kx8-f1-efr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -187,7 +187,7 @@
                             <outlet property="delegate" destination="JUp-z8-88H" id="9C8-qh-P2b"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="" image="table_30x30" landscapeImage="table_30x30" id="1XD-yW-CPw"/>
+                    <tabBarItem key="tabBarItem" title="" image="table_30x30" landscapeImage="table_60x60" id="1XD-yW-CPw"/>
                     <navigationItem key="navigationItem" title="Sent Memes" id="vys-jJ-XHn">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="wCJ-5h-flS">
                             <connections>
@@ -291,6 +291,8 @@
     </scenes>
     <resources>
         <image name="collection_30x30" width="30" height="30"/>
+        <image name="collection_60x60" width="60" height="61"/>
         <image name="table_30x30" width="30" height="30"/>
+        <image name="table_60x60" width="60" height="60"/>
     </resources>
 </document>
