@@ -37,6 +37,11 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         appDelegate.memes.append(meme)
     }
     
+    @IBAction func dismissCurrentView(_ sender: Any) {
+//        self.navigationController!.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
+    }
+    
     func generateMemedImage() -> UIImage {
         
         // Hide toolbar and navbar
@@ -105,11 +110,13 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         subscribeToKeyboardNotifications()
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         unsubscribeFromKeyboardNotifications()
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
     @IBAction func pickAnImage(_ sender: Any) {
